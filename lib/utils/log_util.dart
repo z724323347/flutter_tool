@@ -3,6 +3,8 @@
 import 'dart:async';
 import 'dart:developer' as dev;
 import 'dart:io';
+
+import 'package:app_tool/extensions/date_ext.dart';
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'package:stack_trace/stack_trace.dart';
@@ -30,7 +32,7 @@ void logs(Object? msg) {
   final Frame frame = frames[idx + 1];
 
   // time
-  final String d = DateTime.now().toString();
+  final String d = DateTime.now().hmsDotSS;
   String str = msg.toString();
   final String path = frame.uri.toString().split('/').last;
   final String? member = frame.member?.split('.').first;
