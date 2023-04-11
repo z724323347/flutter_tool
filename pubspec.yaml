@@ -16,6 +16,12 @@ dependencies:
   logger: 1.1.0  
   # flutter - dart  代码分析器
   flutter_lints: ^1.0.4
+  # dio
+  cookie_jar: 3.0.1
+  dio: 4.0.6
+  dio_cookie_manager: 2.0.0
+  # retrofit
+  retrofit: ^3.0.1+1
   # gext 状态管理
   get: 4.6.5
   get_storage: 2.0.3
@@ -25,6 +31,15 @@ dependencies:
   decimal: 2.2.0
   # 事件总线
   event_bus: 2.0.0
+  # 密码加密插件
+  crypto: ^3.0.2
+  # AES 加密
+  encrypt: ^5.0.1
+  # device/package 
+  package_info_plus: 1.4.2
+  device_info_plus: 3.2.4
+  # 打开浏览器
+  url_launcher: ^6.1.5
   
 
 dev_dependencies:
