@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:decimal/decimal.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
@@ -22,13 +24,15 @@ extension StringExtNull on String? {
     return this!;
   }
 
-  /// null 状态 带参数扩展  under：下划线  zero：0
-  String with_([bool under = false, bool zero = false]) {
-    if (under) {
-      return '--';
-    }
-    if (zero) {
-      return '0';
+  /// (symbol) 带参数扩展  under：下划线  zero：0
+  String withSymbol([bool under = false, bool zero = false]) {
+    if (isnull) {
+      if (under) {
+        return '--';
+      }
+      if (zero) {
+        return '0';
+      }
     }
     return safety;
   }

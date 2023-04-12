@@ -60,7 +60,7 @@ class LogsEvent {
       'type': type,
       'file': file,
       'breakpoint': breakpoint,
-      'time': time!.dateTime.hmsDotSS,
+      'time': time?.dateTime.hmsDotSS,
       'msg': msg,
     }..removeWhere((k, v) => v == null);
   }

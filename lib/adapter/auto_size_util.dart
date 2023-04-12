@@ -26,7 +26,7 @@ class AutoSizeUtil {
   }
 
   /// 根据设置 的 宽度 来得到 devicePixelRatio
-  static double getDevicePixelRatio() {
+  static double get getDevicePixelRatio {
     final originalSize = window.physicalSize / window.devicePixelRatio;
     final originalWidth = originalSize.width;
     final originalHeight = originalSize.height;
@@ -43,28 +43,28 @@ class AutoSizeUtil {
   }
 
   /// 根据设置的宽度，来得到对应的高度
-  static Size getSize() {
+  static Size get getSize {
     // 如果是横屏就已宽度为基准
-
     final originalSize = window.physicalSize / window.devicePixelRatio;
     final originalWidth = originalSize.width;
     final originalHeight = originalSize.height;
     if (originalHeight > originalWidth) {
       // 竖屏
-      _screenHeight = window.physicalSize.height / getDevicePixelRatio();
+      _screenHeight = window.physicalSize.height / getDevicePixelRatio;
       _screenWidth = _screenStandard;
       _screenSize = Size(_screenStandard, _screenHeight);
       return _screenSize;
     } else {
       // 横屏
-      _screenWidth = window.physicalSize.width / getDevicePixelRatio();
+      _screenWidth = window.physicalSize.width / getDevicePixelRatio;
       _screenHeight = _screenStandard;
       _screenSize = Size(_screenWidth, _screenStandard);
       return _screenSize;
     }
   }
 
-  static Size getScreenSize() {
+  ///  根据设置的宽度，获取屏幕尺寸
+  static Size get getScreenSize {
     return _screenSize;
   }
 

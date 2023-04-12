@@ -10,6 +10,7 @@ import 'package:flutter/widgets.dart';
 import 'auto_size_util.dart';
 
 void runAutoApp(Widget app) {
+  AutoSizeUtil.setStandard(375.0);
   AutoWidgetsFlutterBinding.ensureInitialized()
     // ignore: invalid_use_of_protected_member
     ..scheduleAttachRootWidget(app)
@@ -22,17 +23,30 @@ void runAutoApp(Widget app) {
 ///
 /// ```dart
 ///   void main() {
-///      runMyApp(const MyApp());
+///      AutoSizeUtil.setStandard(375.0);
+///      runAutoApp(const MyApp());
 ///   }
 /// ```
 ///   part2
 ///
 /// ```dart
-///   void runMyApp(Widget app) {
+///   void runAutoApp(Widget app) {
+///
 ///     AutoWidgetsFlutterBinding.ensureInitialized()
 ///       ..scheduleAttachRootWidget(app)
 ///       ..scheduleWarmUpFrame();
 ///   }
+/// ```
+///
+///   part3
+///
+/// ```dart
+///  MaterialApp(
+///       title: 'AutoWidgets Demo',
+///       builder: AutoSizeUtil.appBuilder,
+///       theme: ThemeData(primarySwatch: Colors.blue),
+///       home: Scaffold(body: HomePage()),
+///     )
 /// ```
 class AutoWidgetsFlutterBinding extends WidgetsFlutterBinding {
   static WidgetsBinding ensureInitialized() {
@@ -45,8 +59,8 @@ class AutoWidgetsFlutterBinding extends WidgetsFlutterBinding {
   @override
   ViewConfiguration createViewConfiguration() {
     return ViewConfiguration(
-      size: AutoSizeUtil.getSize(),
-      devicePixelRatio: AutoSizeUtil.getDevicePixelRatio(),
+      size: AutoSizeUtil.getSize,
+      devicePixelRatio: AutoSizeUtil.getDevicePixelRatio,
     );
   }
 
@@ -69,7 +83,7 @@ class AutoWidgetsFlutterBinding extends WidgetsFlutterBinding {
     _pendingPointerEvents.addAll(PointerEventConverter.expand(
         packet.data,
         // 适配事件的转换比率,采用修改的
-        AutoSizeUtil.getDevicePixelRatio()));
+        AutoSizeUtil.getDevicePixelRatio));
     if (!locked) {
       _flushPointerEventQueue();
     }
