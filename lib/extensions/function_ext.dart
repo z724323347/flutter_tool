@@ -50,8 +50,8 @@ extension VoidCallbackExt on VoidCallback {
   /// 隐藏键盘
   ///
   /// [func]: 要执行的方法
-  VoidCallback? hide(Function func) {
-    VoidCallback target = () {
+  VoidCallback hideKeyBoard() {
+    final VoidCallback target = () {
       if (Get.context != null) {
         final FocusScopeNode currentFocus = FocusScope.of(Get.context!);
         if (!currentFocus.hasPrimaryFocus &&
@@ -59,7 +59,7 @@ extension VoidCallbackExt on VoidCallback {
           FocusManager.instance.primaryFocus!.unfocus();
         }
       }
-      func.call();
+      this.call();
     };
     return target;
   }

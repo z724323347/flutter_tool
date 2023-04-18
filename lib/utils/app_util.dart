@@ -29,7 +29,6 @@ class AppUtil {
     }
     final ClipboardData data = ClipboardData(text: text);
     Clipboard.setData(data);
-    // AppToast.showText(tipText ?? '复制成功');
   }
 
   /// APP 文本粘贴
