@@ -27,6 +27,8 @@ dependencies:
   get_storage: 2.0.3
   # json 序列化
   json_annotation: 4.5.0
+  # toast
+  bot_toast: ^4.0.2
   #计算数字处理
   decimal: 2.2.0
   # 事件总线
