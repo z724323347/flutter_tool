@@ -48,4 +48,29 @@ extension DynamicExt<T> on dynamic {
     }
     return 0;
   }
+
+  String get ts {
+    if (this is String) {
+      return this;
+    }
+    return '$this';
+  }
+
+  num get tNum {
+    if (this is num) {
+      return this;
+    }
+    try {
+      return num.parse(this);
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  bool equals(dynamic data) {
+    if (this == null && data != null) {
+      return false;
+    }
+    return this == data;
+  }
 }
