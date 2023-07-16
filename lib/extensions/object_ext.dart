@@ -19,6 +19,13 @@ extension AppObj on Object? {
     }
     return data;
   }
+
+  bool equals(dynamic data) {
+    if (this == null && data != null) {
+      return false;
+    }
+    return this == data;
+  }
 }
 
 extension DynamicExt<T> on dynamic {
